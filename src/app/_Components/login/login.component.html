@@ -1,0 +1,44 @@
+<!-- <p>login works!</p> -->
+<div class="main-container">
+  <br>
+  <div class="container">
+    <h2 class="heading">User Login</h2>
+    <div class="divider"></div> 
+    <form #loginform="ngForm" (ngSubmit)="loginUser()">
+      <small class="text-danger">{{msg}}</small>
+      <div class="form-group">
+        <label for="userName">Username:</label>
+        <input type="userName" class="form-control"  placeholder="Enter userName" name="userName" [(ngModel)]="user.userName"  #userName="ngModel" required>
+        <small class="text-danger" [class.d-none]="userName.valid || userName.untouched">username is required field</small> 
+
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control"  placeholder="Enter password" name="password"  [(ngModel)]="user.password" #password="ngModel" required
+        [class.is-invalid]="password.invalid && password.touched"
+        >
+        <small class="text-danger" [class.d-none]="password.valid || password.untouched">password is required field</small>
+      </div>
+      
+
+      <!-- <div class="form-group">
+       <label for="role">role:</label>
+       <select class="form-select" id="floatingSelect" aria-label="role" [(ngModel)]="user.role">
+        <option value="1">ADMIN</option>
+        <option value="2">CUSTOMER</option>
+       </select>
+      </div> -->
+
+      <div class="form-group">
+        <label for="role">role:</label>
+        <input type="role" class="form-control" placeholder="Enter role" name="role" [(ngModel)]="user.role" #role="ngModel" required>
+      </div>
+      
+        <button type="submit" value="submit" class="btn btn-success" >Login </button>  
+        <small class="float-right register-text" [routerLink]="['/registration']" >New user?Register here</small>
+    </form>
+    <!-- <small class="float-right" (click)="gotoregistration()" >New user?Register here</small> -->
+    <!-- <small class="float-right" [routerLink]="['/registration']" >New user?Register here</small> -->
+    <br>
+  </div>
+</div>

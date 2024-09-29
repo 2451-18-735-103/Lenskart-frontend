@@ -1,0 +1,93 @@
+<h2>Lenses List</h2>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+
+    <ul class="navbar-nav">
+
+        <li class="'nav-item">
+
+            <a routerLink="lenses" routerLinkActive="active" class="nav-link">Lenses List</a>
+
+        </li>
+
+        <li class="'nav-item">
+
+            <a routerLink="create-lenses" routerLinkActive="active" class="nav-link">Add Lenses</a>
+
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+
+<!-- <h1 class="text-center">{{title}}</h1> -->
+
+<div class="container">
+
+ <router-outlet></router-outlet>
+
+</div>
+
+<table class="table table-striped">
+
+    <thead>
+
+        <tr>
+
+            <th>name</th>
+
+            <th>price</th>
+
+            <th>brand</th>
+
+            <th>image</th>
+
+            <th>shape</th>
+
+            <th>color</th>
+
+            <th>quantity</th>
+
+            <th>Actions</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor = "let lense of lenses">
+
+            <td>{{ lense.name }}</td>
+
+            <td>{{ lense.price }}</td>
+
+            <td>{{ lense.brand }}</td>
+
+            <td>{{ lense.image }}</td>
+
+            <td>{{ lense.shape }}</td>
+
+            <td>{{ lense.color }}</td>
+
+            <td>{{ lense.quantity }}</td>
+
+            <td>
+
+                <button (click) = "updateLenses()" class="btn btn-info">update</button>
+
+                <button (click) = "deleteLenses()" class="btn btn-danger" style="margin-left:10px">delete</button>
+
+                <button (click) = "lensesDetails()" class="btn btn-info" style="margin-left:10px">view</button>
+
+            </td>
+
+        </tr>
+
+    </tbody>
+
+</table>
+
+

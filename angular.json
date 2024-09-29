@@ -96,10 +96,16 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
+          ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "9bbb64a6-d52a-430b-97df-2f6c7302dc6c"
   }
 }
